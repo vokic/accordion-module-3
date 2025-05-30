@@ -6,15 +6,15 @@
     <title>Accordion</title>
     <style>
       :root {
-        --header-bg: #f0f0f0;
-        --content-bg: #e0e0e0;
+        --header-bg: #6096ba;
+        --content-bg: #a3cef1;
         --border: #ccc;
-        --text: #000;
+        --text: #e7ecef;
       }
       body {
         font-family: sans-serif;
         background: #f9f9f9;
-        color: var(--text);
+        color: #4d4d4d;
         padding: 2rem;
         text-align: center;
       }
@@ -46,13 +46,14 @@
         cursor: pointer;
         color: var(--text);
       }
-      .accordion-header:focus {
+      /* .accordion-header:focus {
         outline: 2px solid #007bff;
-      }
+      } */
       .accordion-content {
         display: none;
         padding: 1rem;
         background: var(--content-bg);
+        color: var(--text);
       }
       .accordion-content.show {
         display: block;
@@ -63,12 +64,12 @@
     <h1>Accordion</h1>
 
     <div class="controls">
-      <label>Header: <input type="color" id="header" value="#f0f0f0" /></label>
+      <label>Header: <input type="color" id="header" value="#6096ba" /></label>
       <label
-        >Content: <input type="color" id="content" value="#e0e0e0"
+        >Content: <input type="color" id="content" value="#a3cef1"
       /></label>
-      <label>Border: <input type="color" id="border" value="#cccccc" /></label>
-      <label>Text: <input type="color" id="text" value="#000000" /></label>
+      <label>Border: <input type="color" id="border" value="#ccc" /></label>
+      <label>Text: <input type="color" id="text" value="#e7ecef" /></label>
     </div>
 
     <div class="accordion">
