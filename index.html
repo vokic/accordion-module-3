@@ -8,8 +8,8 @@
       :root {
         --header-bg: #219ebc;
         --content-bg: #023047;
-        --border: #fff;
-        --text: #fff;
+        --border-color: #fff;
+        --text-color: #fff;
       }
       body {
         font-family: sans-serif;
@@ -28,12 +28,12 @@
       .accordion {
         max-width: 600px;
         margin: auto;
-        border: 1px solid var(--border);
+        border: 3px solid var(--border-color);
         border-radius: 8px;
         overflow: hidden;
       }
       .accordion-item {
-        border-top: 1px solid var(--border);
+        border-top: 3px solid var(--border-color);
       }
 
       .accordion-header {
@@ -44,7 +44,7 @@
         text-align: left;
         font-size: 1rem;
         cursor: pointer;
-        color: var(--text);
+        color: var(--text-color);
       }
       /* .accordion-header:focus {
         outline: 2px solid #007bff;
@@ -53,7 +53,7 @@
         display: none;
         padding: 1rem;
         background: var(--content-bg);
-        color: var(--text);
+        color: var(--text-color);
       }
       .accordion-content.show {
         display: block;
