@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <style>
+      :root {
+        --header-bg: #f0f0f0;
+        --content-bg: #e0e0e0;
+        --border: #ccc;
+        --text: #000;
+      }
+      body {
+        font-family: sans-serif;
+        background: #f9f9f9;
+        color: var(--text);
+        padding: 2rem;
+        text-align: center;
+      }
+      .controls {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+      }
+      .accordion {
+        max-width: 600px;
+        margin: auto;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .accordion-item {
+        border-top: 1px solid var(--border);
+      }
+
+      .accordion-header {
+        width: 100%;
+        background: var(--header-bg);
+        border: none;
+        padding: 1rem;
+        text-align: left;
+        font-size: 1rem;
+        cursor: pointer;
+        color: var(--text);
+      }
+      .accordion-header:focus {
+        outline: 2px solid #007bff;
+      }
+      .accordion-content {
+        display: none;
+        padding: 1rem;
+        background: var(--content-bg);
+      }
+      .accordion-content.show {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Accordion</h1>
+
+    <div class="controls">
+      <label>Header: <input type="color" id="header" value="#f0f0f0" /></label>
+      <label
+        >Content: <input type="color" id="content" value="#e0e0e0"
+      /></label>
+      <label>Border: <input type="color" id="border" value="#cccccc" /></label>
+      <label>Text: <input type="color" id="text" value="#000000" /></label>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header">Section 1</button>
+        <div class="accordion-content">
+          <p>This is the content of section 1.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Section 2</button>
+        <div class="accordion-content">
+          <p>This is the content of section 2.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Section 3</button>
+        <div class="accordion-content">
+          <p>This is the content of section 3.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".accordion-header").forEach((btn) => {
+        btn.onclick = () => {
+          const content = btn.nextElementSibling;
+          content.classList.toggle("show");
+        };
+      });
+
+      const setVar = (id, name) =>
+        (document.getElementById(id).oninput = (e) =>
+          document.documentElement.style.setProperty(
+            `--${name}`,
+            e.target.value
+          ));
+
+      setVar("header", "header-bg");
+      setVar("content", "content-bg");
+      setVar("border", "border");
+      setVar("text", "text");
+    </script>
+  </body>
+</html>
